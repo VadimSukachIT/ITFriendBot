@@ -16,6 +16,7 @@ const drive = google.drive({ version: 'v3', auth });
 const sheets = google.sheets({ version: 'v4', auth });
 
 export const saveUserRequestToGoogleDrive = async (user) => {
+  console.log(user);
   const response = await drive.files.get({ fileId: SPREADSHEET_ID });
 
   const sheet = response.data;
