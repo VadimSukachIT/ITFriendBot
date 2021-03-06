@@ -16,6 +16,7 @@ import { MESSENGERS } from './messanger';
 export const {
   DB,
   SPREADSHEET_ID,
+  PORT,
 } = process.env;
 
 export {
@@ -32,4 +33,5 @@ export {
   MESSENGERS,
   SPREADSHEET_ID,
   PARENT_NAME_SCENE,
+  PORT,
 }
