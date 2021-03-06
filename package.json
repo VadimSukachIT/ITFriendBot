@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "dev": "eval $(cat .env) nodemon -r esm",
-    "start": "NODE_ENV=production node -r esm",
+    "start": "eval $(cat .env) nodemon -r esm\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
