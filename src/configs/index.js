@@ -1,0 +1,35 @@
+import {
+  AGE_SCENE,
+  NAME_SCENE,
+  EMAIL_SCENE,
+  COUNTRY_SCENE,
+  PHONE_SCENE,
+  SPECIALITY_SCENE,
+  FINAL_SCENE,
+  MESSENGER_SCENE,
+  PARENT_NAME_SCENE,
+} from './scenes';
+
+import { SPECIALITIES } from './speciality';
+import { MESSENGERS } from './messanger';
+
+export const {
+  DB,
+  SPREADSHEET_ID,
+} = process.env;
+
+export {
+  AGE_SCENE,
+  NAME_SCENE,
+  EMAIL_SCENE,
+  FINAL_SCENE,
+  MESSENGER_SCENE,
+  SPECIALITY_SCENE,
+  PHONE_SCENE,
+  COUNTRY_SCENE,
+  DB,
+  SPECIALITIES,
+  MESSENGERS,
+  SPREADSHEET_ID,
+  PARENT_NAME_SCENE,
+}

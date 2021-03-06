@@ -1,0 +1,9 @@
+export const EMAIL_SCENE = 'email';
+export const SPECIALITY_SCENE = 'speciality';
+export const NAME_SCENE = 'name';
+export const PHONE_SCENE = 'phone';
+export const AGE_SCENE = 'age';
+export const COUNTRY_SCENE = 'country';
+export const MESSENGER_SCENE = 'messenger';
+export const FINAL_SCENE = 'final';
+export const PARENT_NAME_SCENE = 'parent_name';
