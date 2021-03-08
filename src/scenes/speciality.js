@@ -17,9 +17,9 @@ specialityScene.action(SPECIALITIES.JUNIOR, async (ctx) => {
 
   await User.findOneAndUpdate({ email }, { speciality: SPECIALITIES.JUNIOR})
 
-  await ctx.reply(`Отлично! Для проведения пробного занятия понадобится компьютер или ноутбук (планшет не подходит) и приложение Skype. Мы обучаем детей от 7 до 14 лет, ребёнок должен уметь читать на русском языке. Пожалуйста, ответьте на несколько общих вопросов.`);
+  await ctx.reply(`Для проведения пробного занятия понадобится планшет и приложение Skype. Пожалуйста, ответьте на несколько общих вопросов.`);
 
-  return ctx.scene.enter(NAME_SCENE, { email, speciality: SPECIALITIES.JUNIOR });
+  return ctx.scene.enter(PARENT_NAME_SCENE, { email, speciality: SPECIALITIES.DESKTOP });
 });
 
 specialityScene.action(SPECIALITIES.DESKTOP, async(ctx) => {
