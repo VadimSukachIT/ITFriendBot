@@ -12,16 +12,20 @@ export const ageScene = new Scenes.WizardScene(
   },
   async (ctx) => {
     const { email, speciality } = ctx.scene.state;
-    const { text: age } = ctx.message;
+    const { message } = ctx;
 
-    const {isValid, errorMessage} = validateAge(age, speciality);
+    if (message) {
+      const { text: age } = message;
 
-    if (isValid) {
-      await User.findOneAndUpdate({ email }, { age })
-      await ctx.scene.enter(COUNTRY_SCENE, { email });
-    } else {
-      await ctx.reply(`${errorMessage} Пожалуйста, введите корректный возраст:`)
-      return;
+      const { isValid, errorMessage } = validateAge(age, speciality);
+
+      if (isValid) {
+        await User.findOneAndUpdate({ email }, { age })
+        await ctx.scene.enter(COUNTRY_SCENE, { email });
+      } else {
+        await ctx.reply(`${ errorMessage } Пожалуйста, введите корректный возраст:`)
+        return;
+      }
     }
   }
 )

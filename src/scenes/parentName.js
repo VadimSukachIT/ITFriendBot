@@ -10,15 +10,19 @@ export const parentNameScene = new Scenes.WizardScene(
     ctx.wizard.next();
   },
   async (ctx) => {
-    const { text: parentName } = ctx.message;
-    const { email, speciality } = ctx.scene.state;
+    const { email, speciality } = ctx.scene.state
+    const { message } = ctx;
 
-    if (parentName) {
-      await User.findOneAndUpdate({ email }, { parentName })
-      await ctx.scene.enter(NAME_SCENE, { email, speciality });
-    } else {
-      await ctx.reply('Пожалуйста, введите имя корректно:')
-      return;
+    if (message) {
+      const { text: parentName } = message;
+
+      if (parentName) {
+        await User.findOneAndUpdate({ email }, { parentName })
+        await ctx.scene.enter(NAME_SCENE, { email, speciality });
+      } else {
+        await ctx.reply('Пожалуйста, введите ФИО корректно:')
+        return;
+      }
     }
   }
 )

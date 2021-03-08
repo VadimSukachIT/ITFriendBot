@@ -10,15 +10,19 @@ export const phoneScene = new Scenes.WizardScene(
     ctx.wizard.next();
   },
   async (ctx) => {
-    const { text: phone } = ctx.message;
     const { email } = ctx.scene.state;
+    const { message } = ctx;
 
-    if (phone) {
-      await User.findOneAndUpdate({ email }, { phone })
-      await ctx.scene.enter(MESSENGER_SCENE, { email });
-    } else {
-      await ctx.reply('Пожалуйста, введите номер телефона корректно:')
-      return;
+    if (message) {
+      const { text: phone } = message;
+
+      if (phone) {
+        await User.findOneAndUpdate({ email }, { phone })
+        await ctx.scene.enter(MESSENGER_SCENE, { email });
+      } else {
+        await ctx.reply('Пожалуйста, введите номер телефона корректно:')
+        return;
+      }
     }
   }
 )

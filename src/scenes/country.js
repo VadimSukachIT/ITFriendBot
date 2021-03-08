@@ -10,15 +10,19 @@ export const countryScene = new Scenes.WizardScene(
     ctx.wizard.next();
   },
   async (ctx) => {
-    const { text: country } = ctx.message;
     const { email } = ctx.scene.state;
+    const { message } = ctx;
 
-    if (country) {
-      await User.findOneAndUpdate({ email }, { country })
-      await ctx.scene.enter(PHONE_SCENE, { email });
-    } else {
-      await ctx.reply('Пожалуйста, введите страну проживания корректно:')
-      return;
+    if (message) {
+      const { text: country } = message;
+
+      if (country) {
+        await User.findOneAndUpdate({ email }, { country })
+        await ctx.scene.enter(PHONE_SCENE, { email });
+      } else {
+        await ctx.reply('Пожалуйста, введите страну проживания корректно:')
+        return;
+      }
     }
   }
 )

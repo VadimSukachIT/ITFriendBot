@@ -11,7 +11,9 @@ export const finalScene = new Scenes.WizardScene(
 
     const user = await User.findOne({ email });
 
-    await saveUserRequestToGoogleDrive(user);
+    if (user) {
+      await saveUserRequestToGoogleDrive(user);
+    }
 
     await ctx.reply('Спасибо за запись, с Вами свяжутся в ближайшее время!')
     await ctx.scene.leave();

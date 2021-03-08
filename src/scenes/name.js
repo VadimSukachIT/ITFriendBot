@@ -11,15 +11,19 @@ export const nameScene = new Scenes.WizardScene(
     ctx.wizard.next();
   },
   async (ctx) => {
-    const { text: name } = ctx.message;
     const { email, speciality } = ctx.scene.state;
+    const { message } = ctx;
 
-    if (isValidName(name)) {
-      await User.findOneAndUpdate({ email }, { name})
-      await ctx.scene.enter(AGE_SCENE, { email, speciality });
-    } else {
-      await ctx.reply('Пожалуйста, введите имя корректно:')
-      return;
+    if (message) {
+      const { text: name } = message;
+
+      if (isValidName(name)) {
+        await User.findOneAndUpdate({ email }, { name })
+        await ctx.scene.enter(AGE_SCENE, { email, speciality });
+      } else {
+        await ctx.reply('Пожалуйста, введите имя корректно:')
+        return;
+      }
     }
   }
 )
