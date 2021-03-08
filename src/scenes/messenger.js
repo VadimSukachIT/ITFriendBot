@@ -25,7 +25,7 @@ messengerScene.action(MESSENGERS.TELEGRAM, async (ctx) => {
 messengerScene.action(MESSENGERS.VIBER, async (ctx) => {
   const { email } = ctx.scene.state;
 
-  await User.findOneAndUpdate({ email }, { speciality: MESSENGERS.VIBER })
+  await User.findOneAndUpdate({ email }, { messenger: MESSENGERS.VIBER })
 
   return ctx.scene.enter(FINAL_SCENE, { email });
 });
