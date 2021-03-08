@@ -19,7 +19,7 @@ specialityScene.action(SPECIALITIES.JUNIOR, async (ctx) => {
 
   await ctx.reply(`Для проведения пробного занятия понадобится планшет и приложение Skype. Пожалуйста, ответьте на несколько общих вопросов.`);
 
-  return ctx.scene.enter(PARENT_NAME_SCENE, { email, speciality: SPECIALITIES.DESKTOP });
+  return ctx.scene.enter(PARENT_NAME_SCENE, { email, speciality: SPECIALITIES.JUNIOR });
 });
 
 specialityScene.action(SPECIALITIES.DESKTOP, async(ctx) => {
