@@ -7,8 +7,8 @@ export const specialityScene = new Scenes.BaseScene(SPECIALITY_SCENE);
 
 specialityScene.enter(async (ctx) => {
   await ctx.reply('💡Выберите направление:', Markup.inlineKeyboard([
-    Markup.button.callback('ScratchJr)', SPECIALITIES.JUNIOR),
-    Markup.button.callback('Scratch Desktop)', SPECIALITIES.DESKTOP),
+    Markup.button.callback('ScratchJr', SPECIALITIES.JUNIOR),
+    Markup.button.callback('Scratch Desktop', SPECIALITIES.DESKTOP),
   ]));
 });
 
