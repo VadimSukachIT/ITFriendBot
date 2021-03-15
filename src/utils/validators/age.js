@@ -14,13 +14,13 @@ export const validateAge = (age, speciality) => {
 
     }
     case SPECIALITIES.DESKTOP: {
-      return age && age >= 7 && age <= 14 ?
+      return age && age >= 8 && age <= 12 ?
         {
           isValid: true,
           errorMessage: null,
         } : {
           isValid: false,
-          errorMessage: 'Выбранное вами направление предназначено для детей от 7 до 14 лет.'
+          errorMessage: 'Выбранное вами направление предназначено для детей от 8 до 12 лет.'
         }
     }
   }

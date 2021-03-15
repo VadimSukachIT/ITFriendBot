@@ -7,7 +7,7 @@ import { isValidName } from '../utils';
 export const nameScene = new Scenes.WizardScene(
   NAME_SCENE,
   async (ctx) => {
-    await ctx.reply('Введите имя ребенка:')
+    await ctx.reply('Имя ребенка:')
     ctx.wizard.next();
   },
   async (ctx) => {
@@ -21,7 +21,7 @@ export const nameScene = new Scenes.WizardScene(
         await User.findOneAndUpdate({ email }, { name })
         await ctx.scene.enter(AGE_SCENE, { email, speciality });
       } else {
-        await ctx.reply('Пожалуйста, введите имя корректно:')
+        await ctx.reply('Пожалуйста, введите имя ребенка корректно:')
         return;
       }
     }

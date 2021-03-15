@@ -15,7 +15,11 @@ export const finalScene = new Scenes.WizardScene(
       await saveUserRequestToGoogleDrive(user);
     }
 
-    await ctx.reply('Спасибо за запись, с Вами свяжутся в ближайшее время!')
+    await ctx.reply('❗️На указанную Вами электронную почту придёт письмо с данными о возможных датах и времени проведения пробного занятия.\n' +
+      '\n' +
+      'Спасибо за запись!\n' +
+      '\n' +
+      'В ближайшее время мы с Вами свяжемся!')
     await ctx.scene.leave();
   },
 )

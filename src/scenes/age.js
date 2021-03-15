@@ -7,7 +7,7 @@ import { validateAge } from '../utils';
 export const ageScene = new Scenes.WizardScene(
   AGE_SCENE,
   async (ctx) => {
-    await ctx.reply('Введите возраст ребенка:')
+    await ctx.reply('Возраст ребенка:')
     ctx.wizard.next();
   },
   async (ctx) => {

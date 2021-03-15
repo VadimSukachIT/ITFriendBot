@@ -14,7 +14,7 @@ const UserSchema = Schema({
   country: String,
   messenger: {
     type: String,
-    enum: [MESSENGERS.TELEGRAM, MESSENGERS.VIBER],
+    enum: [MESSENGERS.TELEGRAM, MESSENGERS.VIBER, MESSENGERS.WHATSAPP],
   },
   speciality: {
     type: String,

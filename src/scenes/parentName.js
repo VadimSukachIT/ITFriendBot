@@ -6,7 +6,7 @@ import { User } from '../models';
 export const parentNameScene = new Scenes.WizardScene(
   PARENT_NAME_SCENE,
   async (ctx) => {
-    await ctx.reply('Введите ваше ФИО:')
+    await ctx.reply('Ваше ФИО:')
     ctx.wizard.next();
   },
   async (ctx) => {

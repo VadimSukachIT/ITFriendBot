@@ -1,4 +1,5 @@
 export const MESSENGERS = {
-  VIBER: 'viber',
-  TELEGRAM: 'telegram',
+  VIBER: 'V',
+  TELEGRAM: 'Telegram',
+  WHATSAPP: 'Whatsapp',
 }

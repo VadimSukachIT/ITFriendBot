@@ -8,8 +8,7 @@ export const emailScene = new Scenes.WizardScene(
   EMAIL_SCENE,
   async (ctx) => {
     await ctx.reply(
-      `Вас приветствует онлайн-школа IT friend!\nУкажите почтовый адрес, на которую придёт письмо с данными о возможных датах и времени проведения пробного занятия и ссылкой на Skype преподавателя.
-    `);
+      `Вас приветствует онлайн-школа программирования IT FRIEND!\nУкажите адрес Вашей электронной почты:`);
     ctx.wizard.next();
   },
   async (ctx) => {
@@ -18,14 +17,14 @@ export const emailScene = new Scenes.WizardScene(
       const { text: email } = message;
 
       if (!isValidEmail(email)) {
-        await ctx.reply('Введенный вами почтовый адрес не валидный. Пожалуйста, введите корректный почтовый адрес.')
+        await ctx.reply('Вы ввели некорректный адрес электронной почты, пожалуйста, попробуйте ещё раз!')
         return;
       }
 
       const user = await User.findOne({ email });
 
       if (user) {
-        await ctx.reply('Введенный почтовый адрес уже зарегестрирован. Пожалуйста, введите другой почтовый адрес')
+        await ctx.reply('Вы ввели некорректный адрес электронной почты, пожалуйста, попробуйте ещё раз!')
         return;
       }
 
