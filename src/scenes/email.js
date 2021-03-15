@@ -24,7 +24,7 @@ export const emailScene = new Scenes.WizardScene(
       const user = await User.findOne({ email });
 
       if (user) {
-        await ctx.reply('Вы ввели некорректный адрес электронной почты, пожалуйста, попробуйте ещё раз!')
+        await ctx.reply('Введенный вами адрес электронной почты уже используется. Попробуйте еще раз!')
         return;
       }
 
