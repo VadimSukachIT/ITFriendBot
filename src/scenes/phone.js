@@ -6,7 +6,7 @@ import { User } from '../models';
 export const phoneScene = new Scenes.WizardScene(
   PHONE_SCENE,
   async (ctx) => {
-    await ctx.reply('Введите номер телефона:')
+    await ctx.reply('Ваш номер телефона:')
     ctx.wizard.next();
   },
   async (ctx) => {
@@ -20,7 +20,7 @@ export const phoneScene = new Scenes.WizardScene(
         await User.findOneAndUpdate({ email }, { phone })
         await ctx.scene.enter(MESSENGER_SCENE, { email });
       } else {
-        await ctx.reply('Пожалуйста, введите номер телефона корректно:')
+        await ctx.reply('Пожалуйста, попробуйте еще раз!')
         return;
       }
     }

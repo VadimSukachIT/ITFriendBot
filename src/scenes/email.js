@@ -7,8 +7,9 @@ import { User } from '../models';
 export const emailScene = new Scenes.WizardScene(
   EMAIL_SCENE,
   async (ctx) => {
-    await ctx.reply(
-      `Вас приветствует онлайн-школа программирования IT FRIEND!\nУкажите адрес Вашей электронной почты:`);
+    await ctx.reply('🤓Вас приветствует онлайн-школа программирования IT FRIEND!\n' +
+      '\n' +
+      'Укажите адрес Вашей электронной почты:');
     ctx.wizard.next();
   },
   async (ctx) => {

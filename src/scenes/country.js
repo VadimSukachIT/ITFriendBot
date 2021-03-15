@@ -6,7 +6,7 @@ import { User } from '../models';
 export const countryScene = new Scenes.WizardScene(
   COUNTRY_SCENE,
   async (ctx) => {
-    await ctx.reply('Введите страну проживания:')
+    await ctx.reply('Страна проживания:')
     ctx.wizard.next();
   },
   async (ctx) => {
@@ -20,7 +20,7 @@ export const countryScene = new Scenes.WizardScene(
         await User.findOneAndUpdate({ email }, { country })
         await ctx.scene.enter(PHONE_SCENE, { email });
       } else {
-        await ctx.reply('Пожалуйста, введите страну проживания корректно:')
+        await ctx.reply('Пожалуйста, попробуйте еще раз!')
         return;
       }
     }
