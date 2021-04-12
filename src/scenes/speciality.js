@@ -6,7 +6,10 @@ import { User } from '../models';
 export const specialityScene = new Scenes.BaseScene(SPECIALITY_SCENE);
 
 specialityScene.enter(async (ctx) => {
-  await ctx.reply('💡Выберите направление:', Markup.inlineKeyboard([
+  await ctx.reply('💡Выберите направление:\n' +
+    'ScratchJr для детей от 5 до 7 лет.\n' +
+    '\n' +
+    'Scratch Desktop для детей от 8 до 12 лет.', Markup.inlineKeyboard([
     Markup.button.callback('ScratchJr', SPECIALITIES.JUNIOR),
     Markup.button.callback('Scratch Desktop', SPECIALITIES.DESKTOP),
   ]));
